@@ -41,6 +41,21 @@ const routes = [
         component: () =>
             import ('@/Auth/Verified.vue')
     },
+     {
+    path: '/error',
+    name: 'ServerError',
+    component: () => import('@/views/errors/Error50x'),
+  },
+  {
+    path: '/no-internet',
+    name: 'NoInternet',
+    component: () => import('@/views/errors/Connection'),
+  },
+  {
+    path: '*',
+    name: 'NotFound',
+    component: () => import('@/views/errors/Error404'),
+  },
     {
         path: '/user',
         name: 'User',
