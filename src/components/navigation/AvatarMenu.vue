@@ -2,19 +2,10 @@
   <div class="text-center">
     <v-menu offset-y>
       <template v-slot:activator="{ on, attrs }">
-        <v-btn depressed
-          v-bind="attrs"
-          v-on="on"
-        >
-          <v-avatar
-              size="30px"
-              item
-              class="ma-2"
-              >
-          <v-img
-            src="@/assets/avatars/profile.png"
-            alt="user"
-          ></v-img></v-avatar>
+        <v-btn depressed v-bind="attrs" v-on="on">
+          <v-avatar size="30px" item class="ma-2">
+            <v-img src="@/assets/avatars/profile.png" alt="user"></v-img
+          ></v-avatar>
         </v-btn>
       </template>
       <v-list>
@@ -36,20 +27,17 @@
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      items: [
-        { title: 'My Dashboard', link:'/dashboard' },
-        { title: 'My Profile', link:'/profile' },
-       
-      ],
-    }),
-    methods:{
-       onLogout() {
-        this.$store.dispatch('logout')
-      },
-
-
-    }
-  }
+export default {
+  data: () => ({
+    items: [
+      { title: "My Dashboard", link: "/dashboard" },
+      { title: "My Profile", link: "/profile" },
+    ],
+  }),
+  methods: {
+    onLogout() {
+      this.$store.dispatch("logout");
+    },
+  },
+};
 </script>

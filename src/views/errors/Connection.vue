@@ -25,8 +25,8 @@
 
 <script>
 export default {
-  name: 'Connection',
-}
+  name: "Connection",
+};
 </script>
 
 <style scoped>

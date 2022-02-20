@@ -26,8 +26,8 @@
 
 <script>
 export default {
-  name: 'Error404',
-}
+  name: "Error404",
+};
 </script>
 
 <style scoped>
