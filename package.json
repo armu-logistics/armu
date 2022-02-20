@@ -15,7 +15,7 @@
   },
   "main": "test.js",
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "core-js": "^3.6.4",
     "vee-validate": "^3.3.2",
     "vue": "^2.6.11",
