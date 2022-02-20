@@ -1,5 +1,5 @@
 <template>
-  <v-app class="bg-gradient-blue">
+  <div class="bg-gradient-blue">
     <v-container align="center" justify="start" fill-height>
       <div class="mx-auto">
         <h2>Sorry!</h2>
@@ -25,7 +25,7 @@
         </div>
       </div>
     </v-container>
-  </v-app>
+  </div>
 </template>
 
 <script>
@@ -37,5 +37,6 @@ export default {
 <style scoped>
 .bg-gradient-blue {
   background: #deba93;
+  height: 100vh;
 }
 </style>
