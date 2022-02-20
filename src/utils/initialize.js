@@ -8,8 +8,12 @@ export default {
       NProgress.configure({ showSpinner: false })
       NProgress.start()
 
+      const token = localStorage.getItem('token')
+      if (token) config.headers['x-access-token'] = token
+
       if (process.env.NODE_ENV === 'production')
         config.baseURL = process.env.VUE_APP_API_BASE_URL
+
       return config
     })
 
