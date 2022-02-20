@@ -85,12 +85,12 @@
 </template>
 
 <script>
-import validations from "@/utils/Validations";
-import { mapState } from "vuex";
+import validations from '@/utils/Validations'
+import { mapState } from 'vuex'
 export default {
   components: {
-    appHeader: () => import("@/components/Logo"),
-    appBottom: () => import("@/components/BottomImage"),
+    appHeader: () => import('@/components/Logo'),
+    appBottom: () => import('@/components/BottomImage'),
   },
   props: {
     source: String,
@@ -98,70 +98,70 @@ export default {
   data() {
     return {
       valid: false,
-      otp: "",
-      password: "",
-      confirmPassword: "",
+      otp: '',
+      password: '',
+      confirmPassword: '',
       show: false,
       show1: false,
       ...validations,
-      resend: "Resend OTP",
-      username: "",
-    };
+      resend: 'Resend OTP',
+      username: '',
+    }
   },
   mounted() {
-    const regex = /\S+@\S+\.\S+/;
-    const param = this.$route.query.user;
+    const regex = /\S+@\S+\.\S+/
+    const param = this.$route.query.user
     if (!param || !regex.test(param)) {
-      this.$router.push({ name: "ForgotPassword" });
+      this.$router.push({ name: 'ForgotPassword' })
     }
-    this.username = param;
-    this.$store.dispatch("auth/clearAuthenticationStatus");
+    this.username = param
+    this.$store.dispatch('auth/clearAuthenticationStatus')
   },
 
   computed: {
-    ...mapState(["loading"]),
+    ...mapState(['loading']),
   },
 
   methods: {
     async createPassword() {
-      this.$store.state.loading = true;
+      this.$store.state.loading = true
       await this.$store
-        .dispatch("auth/confirmPasswordReset", {
+        .dispatch('auth/confirmPasswordReset', {
           username: this.username,
           code: this.otp,
           password: this.password,
         })
         .then(() => {
-          this.$store.state.loading = false;
+          this.$store.state.loading = false
           if (this.hasAuthenticationStatus) {
-            if (this.authenticationStatus.variant === "error") {
-              this.$store.commit("SNACKBAR", this.authenticationStatus);
+            if (this.authenticationStatus.variant === 'error') {
+              this.$store.commit('SNACKBAR', this.authenticationStatus)
             } else {
-              this.$store.commit("SNACKBAR", this.authenticationStatus);
-              this.$router.push({ name: "SignIn" });
+              this.$store.commit('SNACKBAR', this.authenticationStatus)
+              this.$router.push({ name: 'SignIn' })
             }
           }
-        });
+        })
     },
   },
   async resendOtp() {
-    this.resend = "Resending OTP...";
+    this.resend = 'Resending OTP...'
     await this.$store
-      .dispatch("auth/passwordReset", {
+      .dispatch('auth/passwordReset', {
         username: this.username,
       })
       .then(() => {
         if (this.hasAuthenticationStatus) {
-          if (this.authenticationStatus.variant === "error") {
-            this.$store.commit("SNACKBAR", this.authenticationStatus);
+          if (this.authenticationStatus.variant === 'error') {
+            this.$store.commit('SNACKBAR', this.authenticationStatus)
           } else {
-            this.$store.commit("SNACKBAR", this.authenticationStatus);
+            this.$store.commit('SNACKBAR', this.authenticationStatus)
           }
         }
-        this.resend = "Resend OTP";
-      });
+        this.resend = 'Resend OTP'
+      })
   },
-};
+}
 </script>
 
 <style scoped></style>

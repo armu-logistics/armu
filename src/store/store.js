@@ -311,6 +311,7 @@ export default new Vuex.Store({
           const maize_product = res.data;
           commit("PRODUCTS", {
             maize_product,
+            loading: false,
             snackbar: {
               showing: true,
               text: "Product loaded successful",

@@ -175,12 +175,12 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 
 export default {
   components: {
-    appSideBar: () => import("@/components/navigation/NavigationDrawer"),
-    appHeaderMenu: () => import("@/components/navigation/HeaderMenu"),
+    appSideBar: () => import('@/components/navigation/NavigationDrawer'),
+    appHeaderMenu: () => import('@/components/navigation/HeaderMenu'),
   },
   props: {
     source: String,
@@ -189,16 +189,16 @@ export default {
     dialog: false,
     drawer: null,
     tab: null,
-    oldPassword: "",
-    newPassword: "",
-    confirmPassword: "",
+    oldPassword: '',
+    newPassword: '',
+    confirmPassword: '',
     show: false,
     show1: false,
     show2: false,
   }),
 
   computed: {
-    ...mapState(["email", "username", "roles"]),
+    ...mapState(['email', 'username', 'roles']),
   },
-};
+}
 </script>

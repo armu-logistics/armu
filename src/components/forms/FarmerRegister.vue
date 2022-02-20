@@ -162,40 +162,40 @@
 </template>
 
 <script>
-import { required, email, max } from "vee-validate/dist/rules";
+import { required, email, max } from 'vee-validate/dist/rules'
 import {
   extend,
   ValidationObserver,
   ValidationProvider,
   setInteractionMode,
-} from "vee-validate";
+} from 'vee-validate'
 
-setInteractionMode("eager");
+setInteractionMode('eager')
 
-extend("required", {
+extend('required', {
   ...required,
-  message: "{_field_} can not be empty",
-});
+  message: '{_field_} can not be empty',
+})
 
-extend("max", {
+extend('max', {
   ...max,
-  message: "{_field_} may not be greater than {length} characters",
-});
+  message: '{_field_} may not be greater than {length} characters',
+})
 
-extend("email", {
+extend('email', {
   ...email,
-  message: "Email must be valid",
-});
+  message: 'Email must be valid',
+})
 
-extend("phone", {
+extend('phone', {
   ...required,
-  message: "{_field_} can not be empty",
-});
+  message: '{_field_} can not be empty',
+})
 
-extend("password", {
+extend('password', {
   ...required,
-  message: "{_field_} can not be empty",
-});
+  message: '{_field_} can not be empty',
+})
 
 export default {
   components: {
@@ -203,29 +203,29 @@ export default {
     ValidationObserver,
   },
   data: () => ({
-    fullname: "",
-    nationalId: "",
-    email: "",
+    fullname: '',
+    nationalId: '',
+    email: '',
     phone: 254,
-    kraPin: "",
-    farmName: "",
-    farmLocation: "",
-    farmSize: "",
-    password: "",
-    confirmPassword: "",
+    kraPin: '',
+    farmName: '',
+    farmLocation: '',
+    farmSize: '',
+    password: '',
+    confirmPassword: '',
     checkbox: [],
-    terms: "I have read all the terms and conditions",
+    terms: 'I have read all the terms and conditions',
   }),
 
   methods: {
     onSubmit() {
-      this.$refs.observer.validate();
+      this.$refs.observer.validate()
 
       const formData = {
         name: this.fullname,
         mobile: this.phone,
         email: this.email,
-        roles: ["farmer"],
+        roles: ['farmer'],
         password: this.password,
         kra_pin: this.kraPin,
         national_id: this.nationalId,
@@ -236,22 +236,22 @@ export default {
             size: this.farmSize,
           },
         ],
-      };
+      }
 
-      console.log(formData);
-      this.$store.dispatch("registerFarmer", formData);
+      console.log(formData)
+      this.$store.dispatch('registerFarmer', formData)
     },
     clear() {
-      this.firstname = "";
-      this.lastname = "";
-      this.email = "";
-      this.phone = "";
-      this.password = "";
-      this.confirmPassword = "";
-      this.select = null;
-      this.checkbox = null;
-      this.$refs.observer.reset();
+      this.firstname = ''
+      this.lastname = ''
+      this.email = ''
+      this.phone = ''
+      this.password = ''
+      this.confirmPassword = ''
+      this.select = null
+      this.checkbox = null
+      this.$refs.observer.reset()
     },
   },
-};
+}
 </script>

@@ -34,27 +34,27 @@
 <script>
 export default {
   components: {
-    appLogo: () => import("@/components/Header"),
+    appLogo: () => import('@/components/Header'),
   },
   data() {
     return {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
       show: false,
-    };
+    }
   },
-};
+}
 </script>
 
 <style scoped>
 .image {
-  background-image: url("../assets/background.jpg");
+  background-image: url('../assets/background.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .login-background {
-  background-image: url("../assets/login-background.png");
+  background-image: url('../assets/login-background.png');
   background-size: cover;
   background-repeat: no-repeat;
 }

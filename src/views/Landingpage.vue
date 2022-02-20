@@ -106,33 +106,33 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 export default {
   components: {
-    appHeader: () => import("@/components/Header"),
+    appHeader: () => import('@/components/Header'),
   },
 
   data() {
     return {
-      email: "",
+      email: '',
       valid: false,
-      password: "",
+      password: '',
       show: false,
-    };
+    }
   },
   computed: {
-    ...mapState(["loading"]),
+    ...mapState(['loading']),
   },
   methods: {
     onLogin() {
-      this.$store.state.loading = true;
+      this.$store.state.loading = true
       const formData = {
         email: this.email,
         password: this.password,
-      };
-      console.log(formData);
-      this.$store.dispatch("login", formData);
+      }
+      console.log(formData)
+      this.$store.dispatch('login', formData)
     },
   },
-};
+}
 </script>

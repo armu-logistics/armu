@@ -30,14 +30,14 @@
 export default {
   data: () => ({
     items: [
-      { title: "My Dashboard", link: "/dashboard" },
-      { title: "My Profile", link: "/profile" },
+      { title: 'My Dashboard', link: '/dashboard' },
+      { title: 'My Profile', link: '/profile' },
     ],
   }),
   methods: {
     onLogout() {
-      this.$store.dispatch("logout");
+      this.$store.dispatch('logout')
     },
   },
-};
+}
 </script>

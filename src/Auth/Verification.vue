@@ -37,13 +37,13 @@ export default {
   methods: {
     resetOTP() {
       const formData = {
-        email: localStorage.getItem("email"),
-      };
-      console.log(formData);
-      this.$store.dispatch("newOTP", formData);
+        email: localStorage.getItem('email'),
+      }
+      console.log(formData)
+      this.$store.dispatch('newOTP', formData)
     },
   },
-};
+}
 </script>
 
 <style scoped>

@@ -30,8 +30,8 @@
 
 <script>
 export default {
-  name: "Error50x",
-};
+  name: 'Error50x',
+}
 </script>
 
 <style scoped>

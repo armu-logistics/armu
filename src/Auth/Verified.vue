@@ -36,13 +36,13 @@
 export default {
   data() {
     return {
-      validationUrl: "",
-    };
+      validationUrl: '',
+    }
   },
   mounted() {
-    this.validationUrl = this.$route.query.key;
+    this.validationUrl = this.$route.query.key
   },
-};
+}
 </script>
 
 <style scoped>

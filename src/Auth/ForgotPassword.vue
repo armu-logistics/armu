@@ -54,11 +54,11 @@
 </template>
 
 <script>
-import validation from "@/utils/Validations";
-import { mapGetters } from "vuex";
+import validation from '@/utils/Validations'
+import { mapGetters } from 'vuex'
 export default {
   components: {
-    appHeader: () => import("@/components/Header"),
+    appHeader: () => import('@/components/Header'),
     // appBottom : () => import('@/components/BottomImage')
   },
   props: {
@@ -67,39 +67,39 @@ export default {
   data() {
     return {
       valid: false,
-      email: "",
+      email: '',
       loading: false,
       ...validation,
-    };
+    }
   },
   computed: {
-    ...mapGetters("auth", ["hasAuthenticationStatus", "authenticationStatus"]),
+    ...mapGetters('auth', ['hasAuthenticationStatus', 'authenticationStatus']),
   },
   methods: {
     onReset() {
-      this.loading = true;
+      this.loading = true
 
       this.$store
-        .dispatch("auth/passwordReset", {
+        .dispatch('auth/passwordReset', {
           username: this.email,
         })
         .then(() => {
           if (this.hasAuthenticationStatus) {
-            this.loading = false;
-            if (this.authenticationStatus.variant === "error") {
-              this.$store.commit("SNACKBAR", this.authenticationStatus);
+            this.loading = false
+            if (this.authenticationStatus.variant === 'error') {
+              this.$store.commit('SNACKBAR', this.authenticationStatus)
             } else {
-              this.$store.commit("SNACKBAR", this.authenticationStatus);
+              this.$store.commit('SNACKBAR', this.authenticationStatus)
               this.$router.push({
-                name: "ResetPassword",
+                name: 'ResetPassword',
                 query: { user: this.email },
-              });
+              })
             }
           }
-        });
+        })
     },
   },
-};
+}
 </script>
 
 <style scoped></style>

@@ -18,9 +18,9 @@
 <script>
 export default {
   components: {
-    appSideBar: () => import("@/components/navigation/NavigationDrawer"),
-    appHeaderMenu: () => import("@/components/navigation/HeaderMenu"),
-    appInvoiceTable: () => import("@/components/table/invoiceTable"),
+    appSideBar: () => import('@/components/navigation/NavigationDrawer'),
+    appHeaderMenu: () => import('@/components/navigation/HeaderMenu'),
+    appInvoiceTable: () => import('@/components/table/invoiceTable'),
   },
   props: {
     source: String,
@@ -29,5 +29,5 @@ export default {
     dialog: false,
     drawer: null,
   }),
-};
+}
 </script>

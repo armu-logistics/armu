@@ -26,10 +26,10 @@
 <script>
 export default {
   components: {
-    appSideBar: () => import("@/components/navigation/NavigationDrawer"),
-    appHeaderMenu: () => import("@/components/navigation/HeaderMenu"),
-    appInventory: () => import("@/components/sellProduct/inventory"),
-    appAddProduct: () => import("@/components/dialog/addCrop"),
+    appSideBar: () => import('@/components/navigation/NavigationDrawer'),
+    appHeaderMenu: () => import('@/components/navigation/HeaderMenu'),
+    appInventory: () => import('@/components/sellProduct/inventory'),
+    appAddProduct: () => import('@/components/dialog/addCrop'),
   },
   props: {
     source: String,
@@ -38,5 +38,5 @@ export default {
     dialog: false,
     drawer: null,
   }),
-};
+}
 </script>

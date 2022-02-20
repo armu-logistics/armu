@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 export default {
-  name: "App",
+  name: 'App',
 
   computed: {
-    ...mapState(["snackbar"]),
+    ...mapState(['snackbar']),
   },
 
   components: {},
@@ -24,7 +24,7 @@ export default {
   data: () => ({
     //
   }),
-};
+}
 </script>
 
 <style lang="scss">

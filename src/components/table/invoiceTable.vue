@@ -45,65 +45,65 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters } from 'vuex'
 export default {
   components: {
-    appInvoiceForm: () => import("@/components/dialog/InvoiceForm"),
+    appInvoiceForm: () => import('@/components/dialog/InvoiceForm'),
   },
   data: () => ({
     dialog: false,
-    search: "",
+    search: '',
     headers: [
       {
-        text: "Invoice No.",
-        align: "start",
+        text: 'Invoice No.',
+        align: 'start',
         sortable: true,
-        value: "",
+        value: '',
       },
       {
-        text: "Customer Name",
-        align: "start",
+        text: 'Customer Name',
+        align: 'start',
         sortable: true,
-        value: "",
+        value: '',
       },
       {
-        text: "Product",
-        align: "start",
+        text: 'Product',
+        align: 'start',
         sortable: true,
-        value: "",
+        value: '',
       },
-      { text: "No. of Bags", value: "" },
-      { text: "Total Amount.", value: "" },
-      { text: "Created", value: "" },
-      { text: "Actions", value: "actions", sortable: false },
+      { text: 'No. of Bags', value: '' },
+      { text: 'Total Amount.', value: '' },
+      { text: 'Created', value: '' },
+      { text: 'Actions', value: 'actions', sortable: false },
     ],
   }),
 
   computed: {
-    ...mapState(["fleet", "loadingText"]),
-    ...mapGetters(["loadingTable"]),
+    ...mapState(['fleet', 'loadingText']),
+    ...mapGetters(['loadingTable']),
   },
 
   watch: {
     dialog(val) {
-      val || this.close();
+      val || this.close()
     },
   },
 
   mounted() {
-    this.$store.dispatch("fetchFleet");
+    this.$store.dispatch('fetchFleet')
   },
   created() {
-    this.$store.state.loadingTable = true;
-    this.$store.state.loadingText = "Loading... Please wait";
+    this.$store.state.loadingTable = true
+    this.$store.state.loadingText = 'Loading... Please wait'
   },
 
   methods: {
     editItem(item) {
-      this.editedIndex = this.fleet.indexOf(item);
-      this.editedItem = Object.assign({}, item);
-      this.dialog = true;
+      this.editedIndex = this.fleet.indexOf(item)
+      this.editedItem = Object.assign({}, item)
+      this.dialog = true
     },
   },
-};
+}
 </script>

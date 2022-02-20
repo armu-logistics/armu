@@ -140,40 +140,40 @@
 </template>
 
 <script>
-import { required, email, max } from "vee-validate/dist/rules";
+import { required, email, max } from 'vee-validate/dist/rules'
 import {
   extend,
   ValidationObserver,
   ValidationProvider,
   setInteractionMode,
-} from "vee-validate";
+} from 'vee-validate'
 
-setInteractionMode("eager");
+setInteractionMode('eager')
 
-extend("required", {
+extend('required', {
   ...required,
-  message: "{_field_} can not be empty",
-});
+  message: '{_field_} can not be empty',
+})
 
-extend("max", {
+extend('max', {
   ...max,
-  message: "{_field_} may not be greater than {length} characters",
-});
+  message: '{_field_} may not be greater than {length} characters',
+})
 
-extend("email", {
+extend('email', {
   ...email,
-  message: "Email must be valid",
-});
+  message: 'Email must be valid',
+})
 
-extend("phone", {
+extend('phone', {
   ...required,
-  message: "{_field_} can not be empty",
-});
+  message: '{_field_} can not be empty',
+})
 
-extend("password", {
+extend('password', {
   ...required,
-  message: "{_field_} can not be empty",
-});
+  message: '{_field_} can not be empty',
+})
 
 export default {
   components: {
@@ -181,23 +181,23 @@ export default {
     ValidationObserver,
   },
   data: () => ({
-    businessName: "",
+    businessName: '',
     mobileNo: 254,
-    email: "",
-    role: ["buyer"],
-    businessRegNo: "",
-    kraPin: "",
-    primaryContact: "",
-    password: "",
-    confirmPassword: "",
+    email: '',
+    role: ['buyer'],
+    businessRegNo: '',
+    kraPin: '',
+    primaryContact: '',
+    password: '',
+    confirmPassword: '',
     checkbox: [],
-    city: "",
-    terms: "I have read all the terms and conditions",
+    city: '',
+    terms: 'I have read all the terms and conditions',
   }),
 
   methods: {
     onSubmit() {
-      this.$refs.observer.validate();
+      this.$refs.observer.validate()
 
       const formData = {
         name: this.businessName,
@@ -209,11 +209,11 @@ export default {
         businessRegistrationNumber: this.businessRegNo,
         city: this.city,
         primaryContactName: this.primaryContact,
-      };
+      }
 
-      console.log(formData);
-      this.$store.dispatch("registerBuyer", formData);
+      console.log(formData)
+      this.$store.dispatch('registerBuyer', formData)
     },
   },
-};
+}
 </script>

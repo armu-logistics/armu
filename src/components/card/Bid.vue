@@ -27,37 +27,37 @@ export default {
     return {
       desserts: [
         {
-          product: "Maize",
-          grade: "A",
+          product: 'Maize',
+          grade: 'A',
           orders: 200,
-          region: "Kitale",
+          region: 'Kitale',
         },
         {
-          product: "Maize",
-          grade: "A",
+          product: 'Maize',
+          grade: 'A',
           orders: 340,
-          region: "Eldoret",
+          region: 'Eldoret',
         },
         {
-          product: "Millet",
-          grade: "B",
+          product: 'Millet',
+          grade: 'B',
           orders: 159,
-          region: "kajiado",
+          region: 'kajiado',
         },
         {
-          product: "Sorgum",
-          grade: "B",
+          product: 'Sorgum',
+          grade: 'B',
           orders: 60,
-          region: "Narok",
+          region: 'Narok',
         },
         {
-          product: "Maize",
-          grade: "A",
+          product: 'Maize',
+          grade: 'A',
           orders: 500,
-          region: "Nakuru",
+          region: 'Nakuru',
         },
       ],
-    };
+    }
   },
-};
+}
 </script>

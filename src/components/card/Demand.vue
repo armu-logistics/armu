@@ -33,20 +33,20 @@
 export default {
   data: () => ({
     labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "June",
-      "July",
-      "Aug",
-      "Sept",
-      "Oct",
-      "Nov ",
-      "Dec",
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'June',
+      'July',
+      'Aug',
+      'Sept',
+      'Oct',
+      'Nov ',
+      'Dec',
     ],
     value: [200, 675, 410, 390, 310, 460, 250, 240, 390, 310, 460, 1000],
   }),
-};
+}
 </script>

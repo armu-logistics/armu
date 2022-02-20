@@ -23,27 +23,27 @@ export default {
     return {
       desserts: [
         {
-          name: "Frozen Yogurt",
+          name: 'Frozen Yogurt',
           calories: 159,
         },
         {
-          name: "Ice cream sandwich",
+          name: 'Ice cream sandwich',
           calories: 237,
         },
         {
-          name: "Eclair",
+          name: 'Eclair',
           calories: 262,
         },
         {
-          name: "Cupcake",
+          name: 'Cupcake',
           calories: 305,
         },
         {
-          name: "Gingerbread",
+          name: 'Gingerbread',
           calories: 356,
         },
       ],
-    };
+    }
   },
-};
+}
 </script>

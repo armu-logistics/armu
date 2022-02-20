@@ -37,65 +37,65 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   data: () => ({
     dialog: false,
-    search: "",
+    search: '',
     headers: [
       {
-        text: "Id",
-        align: "start",
+        text: 'Id',
+        align: 'start',
         sortable: true,
-        value: "id",
+        value: 'id',
       },
       {
-        text: "Product",
-        align: "start",
+        text: 'Product',
+        align: 'start',
         sortable: true,
-        value: "productGrade.product.name",
+        value: 'productGrade.product.name',
       },
       {
-        text: "Grade",
-        align: "start",
+        text: 'Grade',
+        align: 'start',
         sortable: true,
-        value: "productGrade.grade.name",
+        value: 'productGrade.grade.name',
       },
       {
-        text: "No. of Bags",
-        align: "start",
+        text: 'No. of Bags',
+        align: 'start',
         sortable: true,
-        value: "numberOfBags",
+        value: 'numberOfBags',
       },
       {
-        text: "Price offer",
-        align: "start",
+        text: 'Price offer',
+        align: 'start',
         sortable: true,
-        value: "pricePerBag",
+        value: 'pricePerBag',
       },
-      { text: "Created", value: "createdAt" },
-      { text: "Location", value: "pickUpLocation" },
-      { text: "Status", value: "status" },
+      { text: 'Created', value: 'createdAt' },
+      { text: 'Location', value: 'pickUpLocation' },
+      { text: 'Status', value: 'status' },
     ],
   }),
 
   computed: {
-    ...mapState(["product", "loading"]),
-    ...mapGetters(["bookedProducts"]),
+    ...mapState(['product', 'loading']),
+    ...mapGetters(['bookedProducts']),
   },
 
   watch: {
     dialog(val) {
-      val || this.close();
+      val || this.close()
     },
   },
 
   mounted() {
-    this.$store.dispatch("getProduct");
+    this.$store.dispatch('getProduct')
   },
   created() {
-    this.$store.state.loading = true;
+    this.$store.state.loading = true
   },
-};
+}
 </script>

@@ -21,21 +21,21 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex'
 export default {
   components: {
-    appAvatar: () => import("@/components/navigation/AvatarMenu"),
+    appAvatar: () => import('@/components/navigation/AvatarMenu'),
   },
   computed: {
     username() {
-      return this.$store.getters.username;
+      return this.$store.getters.username
     },
-    ...mapState(["navDialog"]),
+    ...mapState(['navDialog']),
   },
   methods: {
     drawerClick(value) {
-      this.$store.state.navDialog = value;
+      this.$store.state.navDialog = value
     },
   },
-};
+}
 </script>
