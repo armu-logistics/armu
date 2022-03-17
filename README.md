@@ -34,7 +34,7 @@ $ yarn global add @vue/cli
 ``` bash
 
 # install dependencies
-$ yarn install
+$ yarn 
 
 # Run your tests
 $ yarn run test
